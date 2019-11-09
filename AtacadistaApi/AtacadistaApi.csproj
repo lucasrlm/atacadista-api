@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AtacadistaApi.Model\AtacadistaApi.Model.csproj" />
+    <ProjectReference Include="..\AtacadistaApi.Negocio\AtacadistaApi.Negocio.csproj" />
   </ItemGroup>
 
 </Project>
