@@ -1,17 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
+using AtacadistaApi.AcessoDados;
+using AtacadistaApi.AcessoDados.Interface;
+using AtacadistaApi.Negocio;
+using AtacadistaApi.Negocio.Interface;
+using AtacadistaApi.Servicos;
+using AtacadistaApi.Servicos.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace AtacadistaApi
@@ -29,6 +29,14 @@ namespace AtacadistaApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddHttpClient();
+
+            services.AddSingleton<ISolicitacaoNegocio, SolicitacaoNegocio>();
+            services.AddSingleton<ISolicitacaoRepositorio, SolicitacaoRepositorio>();
+            services.AddSingleton<ILojistaApi, LojistaApi>();
+            services.AddSingleton<IOrcamentoNegocio, OrcamentoNegocio>();
+            services.AddSingleton<IOrcamentoRepositorio, OrcamentoRepositorio>();
 
             services.AddSwaggerGen(c =>
             {
