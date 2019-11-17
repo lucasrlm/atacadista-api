@@ -1,13 +1,17 @@
 ﻿using AtacadistaApi.AcessoDados.Interface;
+using AtacadistaApi.Model;
 using AtacadistaApi.Model.Solicitacao;
 
 namespace AtacadistaApi.AcessoDados
 {
     public class SolicitacaoRepositorio : ISolicitacaoRepositorio
     {
-        public int CriarSolicitacao(SolicitacaoRequisicao solicitacaoRequisicao)
+        public RetornoBase CriarSolicitacao(SolicitacaoRequisicao solicitacaoRequisicao)
         {
-            return 1;
+            return new RetornoBase()
+            {
+                Id = 1
+            };
         }
 
         public void AlterarSolicitacao(int solicitacaoId, SolicitacaoRequisicao solicitacaoRequisicao)

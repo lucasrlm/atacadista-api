@@ -1,9 +1,10 @@
-﻿using AtacadistaApi.Model.Orcamento;
+﻿using AtacadistaApi.Model;
+using AtacadistaApi.Model.Orcamento;
 
 namespace AtacadistaApi.Servicos.Interface
 {
     public interface ILojistaApi
     {
-        int CriarOrcamento(Orcamento orcamento);
+        RetornoBase CriarOrcamento(Orcamento orcamento);
     }
 }

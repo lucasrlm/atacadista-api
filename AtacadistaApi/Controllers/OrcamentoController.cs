@@ -18,8 +18,8 @@ namespace AtacadistaApi.Controllers
         [HttpPost]
         public ActionResult Post([FromBody]OrcamentoRequisicao orcamento)
         {
-            var orcamentoId = _orcamentoNegocio.CriarOrcamento(orcamento);
-            return Ok(orcamentoId);
+            var retorno = _orcamentoNegocio.CriarOrcamento(orcamento);
+            return Ok(retorno);
         }
     }
 }

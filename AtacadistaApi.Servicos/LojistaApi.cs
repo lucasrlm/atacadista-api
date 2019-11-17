@@ -1,4 +1,5 @@
-﻿using AtacadistaApi.Model.Orcamento;
+﻿using AtacadistaApi.Model;
+using AtacadistaApi.Model.Orcamento;
 using AtacadistaApi.Servicos.Interface;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
@@ -23,7 +24,7 @@ namespace AtacadistaApi.Servicos
             };
         }
 
-        public int CriarOrcamento(Orcamento orcamento)
+        public RetornoBase CriarOrcamento(Orcamento orcamento)
         {
             var json = JsonConvert.SerializeObject(orcamento);
 
@@ -33,7 +34,7 @@ namespace AtacadistaApi.Servicos
             {
                 var contents = response.Content.ReadAsStringAsync().Result;
 
-                return JsonConvert.DeserializeObject<int>(contents);
+                return JsonConvert.DeserializeObject<RetornoBase>(contents);
             }
             else
             {

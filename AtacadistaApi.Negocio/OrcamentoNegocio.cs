@@ -1,4 +1,5 @@
 ﻿using AtacadistaApi.AcessoDados.Interface;
+using AtacadistaApi.Model;
 using AtacadistaApi.Model.Orcamento;
 using AtacadistaApi.Negocio.Interface;
 
@@ -6,11 +7,16 @@ namespace AtacadistaApi.Negocio
 {
     public class OrcamentoNegocio : IOrcamentoNegocio
     {
-        private readonly IOrcamentoRepositorio _lojistaRepositorio;
+        private readonly IOrcamentoRepositorio _orcamentoRepositorio;
 
-        public int CriarOrcamento(OrcamentoRequisicao orcamentoRequisicao)
+        public OrcamentoNegocio(IOrcamentoRepositorio orcamentoRepositorio)
         {
-            return _lojistaRepositorio.CriarOrcamento(orcamentoRequisicao);
+            _orcamentoRepositorio = orcamentoRepositorio;
+        }
+
+        public RetornoBase CriarOrcamento(OrcamentoRequisicao orcamentoRequisicao)
+        {
+            return _orcamentoRepositorio.CriarOrcamento(orcamentoRequisicao);
         }
     }
 }

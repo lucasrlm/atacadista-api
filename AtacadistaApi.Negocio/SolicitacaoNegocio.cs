@@ -1,4 +1,5 @@
 ﻿using AtacadistaApi.AcessoDados.Interface;
+using AtacadistaApi.Model;
 using AtacadistaApi.Model.Solicitacao;
 using AtacadistaApi.Negocio.Interface;
 
@@ -13,7 +14,7 @@ namespace AtacadistaApi.Negocio
             _solicitacaoRepositorio = solicitacaoRepositorio;
         }
 
-        public int CriarSolicitacao(SolicitacaoRequisicao solicitacaoRequisicao)
+        public RetornoBase CriarSolicitacao(SolicitacaoRequisicao solicitacaoRequisicao)
         {
             return _solicitacaoRepositorio.CriarSolicitacao(solicitacaoRequisicao);
         }
