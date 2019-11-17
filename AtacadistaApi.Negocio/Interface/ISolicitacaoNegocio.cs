@@ -1,5 +1,6 @@
 ﻿using AtacadistaApi.Model;
 using AtacadistaApi.Model.Solicitacao;
+using AtacadistaApi.Util.Enum;
 
 namespace AtacadistaApi.Negocio.Interface
 {
@@ -7,6 +8,6 @@ namespace AtacadistaApi.Negocio.Interface
     {
         RetornoBase CriarSolicitacao(SolicitacaoRequisicao solicitacaoRequisicao);
 
-        void AlterarSolicitacao(int solicitacaoId, SolicitacaoRequisicao solicitacaoRequisicao);
+        void AlterarSolicitacao(int solicitacaoId, SolicitacaoStatus solicitacaoStatus);
     }
 }

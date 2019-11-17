@@ -1,5 +1,6 @@
 ﻿using AtacadistaApi.Model.Solicitacao;
 using AtacadistaApi.Negocio.Interface;
+using AtacadistaApi.Util.Enum;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AtacadistaApi.Controllers
@@ -23,9 +24,9 @@ namespace AtacadistaApi.Controllers
         }
 
         [HttpPut("{solicitacaoId}")]
-        public ActionResult Put(int solicitacaoId, [FromBody]SolicitacaoRequisicao solicitacao)
+        public ActionResult Put(int solicitacaoId, [FromBody]SolicitacaoStatus solicitacaoStatus)
         {
-            _solicitacaoNegocio.AlterarSolicitacao(solicitacaoId, solicitacao);
+            _solicitacaoNegocio.AlterarSolicitacao(solicitacaoId, solicitacaoStatus);
             return Ok();
         }
     }
